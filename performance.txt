@@ -1,0 +1,71 @@
+
+Improved Model Performance Report
+
+Best Parameters:
+{'min_samples_leaf': 30, 'max_iter': 300, 'max_depth': 5, 'learning_rate': 0.1}
+
+Validation Optimal Threshold: 0.3403
+
+Test Set Metrics:
+-----------------------
+Accuracy: 0.9520
+Precision: 0.6000
+Recall: 0.5562
+F1 Score: 0.5773
+ROC AUC: 0.9432
+PR AUC: 0.6112
+
+Confusion Matrix:
+[[2776   66]
+ [  79   99]]
+
+Classification Report:
+              precision    recall  f1-score   support
+
+           0       0.97      0.98      0.97      2842
+           1       0.60      0.56      0.58       178
+
+    accuracy                           0.95      3020
+   macro avg       0.79      0.77      0.78      3020
+weighted avg       0.95      0.95      0.95      3020
+
+Breakdown of v1.1 model's performance.
+
+The biggest takeaway here is a highly imbalanced dataset. Out of 3,020 cases in test set, only 178 (about 5.9%) are actual fraud. Given how rare the "positive" class is, v1.1 model is actually performing quite well, though it highlights the classic trade-off between catching fraudsters and annoying honest customers.
+
+1. The Confusion Matrix (The Ground Truth)
+
+This is the most practical way to see exactly what v1.1 model did on the 3,020 test claims:
+
+    True Negatives (2776): Honest customers correctly identified as honest. (Great!)
+
+    True Positives (99): Actual fraudsters successfully caught. (Great!)
+
+    False Positives (66): Honest customers falsely accused of fraud. (These are "false alarms." This wastes investigator time and frustrates legitimate customers).
+
+    False Negatives (79): Actual fraudsters who slipped past the model. (This is direct financial loss to the company).
+
+2. Core Metrics Translated
+
+    Accuracy (0.9520): The model is correct 95.2% of the time. However, because 94% of v1.1's data is non-fraud, a "dumb" model that simply guesses "Not Fraud" every single time would have an accuracy of 94%. This is why we look at the other metrics.
+
+    Precision (0.6000): When v1.1's model raises a red flag and says "Fraud!", it is right 60% of the time. The other 40% of the time, it's a false alarm.
+
+    Recall (0.5562): Out of all the actual fraudulent claims happening in reality, v1.1's model only catches 55.6% of them. It misses the remaining 44.4%.
+
+    F1 Score (0.5773): This is the harmonic mean of Precision and Recall. It shows that v1.1's model is trying to strike a balanced middle ground between minimizing false alarms and maximizing the number of frauds caught.
+
+3. The AUC Metrics (Model Power)
+
+    ROC AUC (0.9432): This is excellent. It means if you pick one random fraudster and one random honest customer, there is a 94.3% chance the model will assign a higher risk score to the fraudster. It proves v1.1's model has successfully learned the underlying patterns of fraud.
+
+    PR AUC (0.6112): Precision-Recall AUC is much more informative for imbalanced data. A random guessing model would score a 0.059 here (since fraud is 5.9% of the data). v1.1's score of 0.6112 means v1.1's model is performing roughly 10 times better than random guessing.
+
+4. The Optimal Threshold (0.3403)
+
+By default, machine learning models classify anything with a probability above 50% (0.50) as a "1".
+
+v1.1's threshold tuning script correctly realized that waiting for a 50% certainty was too strict and would let too much fraud slip by. Instead, it lowered the trigger point to 34.03%. This means the model is instructed to be slightly more aggressive: if it is even 34% suspicious of a claim, it flags it for investigation.
+The Business Verdict
+
+v1.1's model is highly capable of distinguishing between legitimate and fraudulent claims (proven by the 0.94 ROC AUC). However, the hard classification results (Precision/Recall) reflect a deliberate business compromise: you are catching a bit more than half of all fraud (55% Recall) while ensuring that v1.1's fraud investigation team isn't completely overwhelmed with false alarms (60% Precision).
