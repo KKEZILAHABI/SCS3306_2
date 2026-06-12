@@ -1,0 +1,37 @@
+v1
+Data Exploration Report:
+------------------------------------------------------------
+                  Column Data Type  NaNs  Zeros  Blanks  Total Issues
+0           FraudFound_P     int64     0  14497       0         14497
+1                    Age     int64     0    320       0           320
+2           MonthClaimed       str     0      1       0             1
+3       DayOfWeekClaimed       str     0      1       0             1
+4                  Month       str     0      0       0             0
+5           AccidentArea       str     0      0       0             0
+6                   Make       str     0      0       0             0
+7            WeekOfMonth     int64     0      0       0             0
+8              DayOfWeek       str     0      0       0             0
+9                    Sex       str     0      0       0             0
+10    WeekOfMonthClaimed     int64     0      0       0             0
+11                 Fault       str     0      0       0             0
+12         MaritalStatus       str     0      0       0             0
+13            PolicyType       str     0      0       0             0
+14       VehicleCategory       str     0      0       0             0
+15          VehiclePrice       str     0      0       0             0
+16          PolicyNumber     int64     0      0       0             0
+17             RepNumber     int64     0      0       0             0
+18            Deductible     int64     0      0       0             0
+19          DriverRating     int64     0      0       0             0
+20  Days_Policy_Accident       str     0      0       0             0
+21     Days_Policy_Claim       str     0      0       0             0
+22    PastNumberOfClaims       str     0      0       0             0
+23          AgeOfVehicle       str     0      0       0             0
+24     AgeOfPolicyHolder       str     0      0       0             0
+25     PoliceReportFiled       str     0      0       0             0
+26        WitnessPresent       str     0      0       0             0
+27             AgentType       str     0      0       0             0
+28   NumberOfSuppliments       str     0      0       0             0
+29   AddressChange_Claim       str     0      0       0             0
+30          NumberOfCars       str     0      0       0             0
+31                  Year     int64     0      0       0             0
+32            BasePolicy       str     0      0       0             0

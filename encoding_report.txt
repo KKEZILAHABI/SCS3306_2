@@ -1,0 +1,62 @@
+Encoding Report
+====================
+Missing values (0) handled for: Age, DayOfWeekClaimed, MonthClaimed
+
+Categorical preprocessing: Lowercase and whitespace trimming applied
+
+Month: OrdinalEncoder (unknown -> -1)
+  Known categories (12): ['dec' 'jan' 'oct' 'jun' 'feb' 'apr' 'mar' 'aug' 'jul' 'may']... plus 2 more
+DayOfWeek: OrdinalEncoder (unknown -> -1)
+  Known categories (7): ['wednesday' 'friday' 'saturday' 'monday' 'tuesday' 'sunday' 'thursday']
+Make: OrdinalEncoder (unknown -> -1)
+  Known categories (19): ['honda' 'toyota' 'ford' 'mazda' 'chevrolet' 'pontiac' 'accura' 'dodge'
+ 'mercury' 'jaguar']... plus 9 more
+AccidentArea: OrdinalEncoder (unknown -> -1)
+  Known categories (2): ['urban' 'rural']
+DayOfWeekClaimed: OrdinalEncoder (unknown -> -1)
+  Known categories (7): ['tuesday' 'monday' 'thursday' 'friday' 'wednesday' 'saturday' 'sunday']
+MonthClaimed: OrdinalEncoder (unknown -> -1)
+  Known categories (12): ['jan' 'nov' 'jul' 'feb' 'dec' 'apr' 'mar' 'aug' 'may' 'jun']... plus 2 more
+Sex: OrdinalEncoder (unknown -> -1)
+  Known categories (2): ['female' 'male']
+MaritalStatus: OrdinalEncoder (unknown -> -1)
+  Known categories (4): ['single' 'married' 'widow' 'divorced']
+Fault: OrdinalEncoder (unknown -> -1)
+  Known categories (2): ['policy holder' 'third party']
+PolicyType: OrdinalEncoder (unknown -> -1)
+  Known categories (9): ['sport - liability' 'sport - collision' 'sedan - liability'
+ 'utility - all perils' 'sedan - all perils' 'sedan - collision'
+ 'utility - collision' 'utility - liability' 'sport - all perils']
+VehicleCategory: OrdinalEncoder (unknown -> -1)
+  Known categories (3): ['sport' 'utility' 'sedan']
+VehiclePrice: OrdinalEncoder (unknown -> -1)
+  Known categories (6): ['more than 69000' '20000 to 29000' '30000 to 39000' 'less than 20000'
+ '40000 to 59000' '60000 to 69000']
+PolicyNumber: OrdinalEncoder (unknown -> -1)
+  Known categories (15100): [ 1  2  3  4  5  6  7  9 10 11]... plus 15090 more
+Days_Policy_Accident: OrdinalEncoder (unknown -> -1)
+  Known categories (5): ['more than 30' '15 to 30' 'none' '1 to 7' '8 to 15']
+Days_Policy_Claim: OrdinalEncoder (unknown -> -1)
+  Known categories (3): ['more than 30' '15 to 30' '8 to 15']
+PastNumberOfClaims: OrdinalEncoder (unknown -> -1)
+  Known categories (4): ['none' '1' '2 to 4' 'more than 4']
+AgeOfVehicle: OrdinalEncoder (unknown -> -1)
+  Known categories (8): ['3 years' '6 years' '7 years' 'more than 7' '5 years' '4 years' '2 years'
+ 'new']
+AgeOfPolicyHolder: OrdinalEncoder (unknown -> -1)
+  Known categories (8): ['26 to 30' '31 to 35' '41 to 50' '51 to 65' '21 to 25' '36 to 40'
+ 'over 65' '18 to 20']
+PoliceReportFiled: OrdinalEncoder (unknown -> -1)
+  Known categories (2): ['no' 'yes']
+WitnessPresent: OrdinalEncoder (unknown -> -1)
+  Known categories (2): ['no' 'yes']
+AgentType: OrdinalEncoder (unknown -> -1)
+  Known categories (2): ['external' 'internal']
+NumberOfSuppliments: OrdinalEncoder (unknown -> -1)
+  Known categories (4): ['none' 'more than 5' '3 to 5' '1 to 2']
+AddressChange_Claim: OrdinalEncoder (unknown -> -1)
+  Known categories (5): ['1 year' 'no change' '4 to 8 years' '2 to 3 years' 'under 6 months']
+NumberOfCars: OrdinalEncoder (unknown -> -1)
+  Known categories (5): ['3 to 4' '1 vehicle' '2 vehicles' '5 to 8' 'more than 8']
+BasePolicy: OrdinalEncoder (unknown -> -1)
+  Known categories (3): ['liability' 'collision' 'all perils']
